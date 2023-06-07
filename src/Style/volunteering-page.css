@@ -75,3 +75,11 @@
 .select-style{
     width: 15vw;
 }
+.form-register{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.title-form{
+    text-align: center;
+}
