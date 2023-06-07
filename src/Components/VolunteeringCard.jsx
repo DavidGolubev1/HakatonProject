@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import './../Style/volunteering-card.css'
 
 function VolunteeringCard(data) {
     return (
         <div id="volunteer-card">
+            <Link className='box-link-card' to={`VoulnterringPage/${data.data.ID}`}>
             <div className="box-info">
                 <div className='subject-card'>{data.data.subject}</div>
                 <div className="title-card">{data.data.title}</div>
@@ -27,6 +29,7 @@ function VolunteeringCard(data) {
                     </div>
                 </div>
             </div>
+            </Link>
         </div>
     );
 };

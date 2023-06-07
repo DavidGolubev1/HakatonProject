@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+.volunteering-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(110, 126, 159, 0.281);
+    
+}
+
+.title-help {
+    text-align: center;
+    font-size: 80px;
+    text-align: ltr;
+    color: black;
+    font-family: Courier;
+    font-weight: bold;
+}
+
+.subtitle-help {
+    text-align: center;
+    font-size: 40px;
+    font-family: Courier;
+    font-weight: bold;
+}
+
+.description-help {
+    margin-left: 2vw;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    
+
+
+}
+
+.image-helps-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-helps {
+    width: 45vw;
+    height: 25vw;
+    display: flex;
+    align-items: center;
+}
+
+.blue-line{
+    height: 0.5vw;
+    background-color: rgb(134, 116, 223);
+}
+.required-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+}
+.imgdiv {
+    display: flex;
+    position: absolute;
+    top: 250px;
+}
+
+.afterline {
+    font-size: 1.5vw;
+    ;
+    text-align: center;
+    font-family: Courier;
+    font-weight: bold;
+}
