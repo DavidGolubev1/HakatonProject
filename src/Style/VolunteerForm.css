@@ -1,15 +1,88 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+#New-volunteering{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-#new-form{
+#new-grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr 3fr 0.1fr;
+    width: 700px;
+    height: auto;
+    background: rgb(31, 69, 97);
+    background: linear-gradient(14deg, rgba(31, 69, 97, 1) 0%, rgba(39, 157, 228, 1) 39%, rgba(0, 100, 251, 1) 100%);
+    border-radius: 10px;
+    border: 1px solid;
+    box-shadow: 3px 3px grey;
+    margin: 30px;
+}
+
+#grid-header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-#form-choose-age{
+
+#grid-left-form {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#grid-right-form {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#grid-description {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 5px;
+}
+
+#grid-BTN {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#grid-BTN button{
+    border-radius: 10px;
+    width: 10vw ;
+    height: 3vw ;
+}
+
+
+
+#form-choose-age {
     width: 100px;
 }

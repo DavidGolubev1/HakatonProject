@@ -4,7 +4,7 @@ import Logo from './../assets/Logo.png'
 import './../Style/layout.css'
 function Layout() {
     const [burgerBool, setBurgerBool] = useState(false)
-
+    const loggedUser = JSON.parse(localStorage.getItem("logged-user"))
     return (
         <div className='layout-container'>
             <div className="nav-include-all">
@@ -12,18 +12,24 @@ function Layout() {
                     <div className="links-bar">
                         <Link to={`/`} className="logo-background"><img id="logo" src={Logo} alt="" /></Link>
                         <Link className='nav-links' to={'/'}><div>Home page</div> </Link>
+                        <Link className='nav-links' to={'Voulnteerings'}> <div>Activities</div></Link>
                         <Link className='nav-links' to={'About'}>About us </Link>
                         <Link className='nav-links' to={'Contact'}>Contact us</Link>
-                        <Link className='nav-links' to={'userpage/Login'}>Log In </Link>
-                    
+                        {loggedUser === "" ?
+                            <Link className='nav-links' to={'userpage/Login'}>Log In </Link>
+                            :
+                            <Link className='nav-links' to={'VolunteeringForm'}>Add event</Link>
+                        }
+                        <div id='place-holder'>sign in</div>
                         <div id='layout-profile-signed'>
-                            <div>
-                                <img id='profile-signed-avatar' src="" alt="" />
+                            <div id='start-drop-down-meanu'>
+                                <img id='profile-signed-avatar' src={loggedUser.avatarImage} alt="" />
                             </div>
                             <div id='profile-signed-drop-down'>
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My profile</div></Link>
+                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>Future activities</div></Link>
+                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My activities</div></Link>
+                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>Sign out</div></Link>
                             </div>
 
                         </div>
@@ -43,7 +49,7 @@ function Layout() {
                 </div>}
             </div>
             <Outlet />
-            
+
             <div className="footer">
                 <div className="website-name-footer">
                     Help Hub
