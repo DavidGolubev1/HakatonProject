@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import './../Style/volunteering-page.css'
 import { useParams } from 'react-router-dom';
 function VolunteeringPage() {
@@ -38,6 +39,13 @@ function VolunteeringPage() {
                       <span>{dataById.required[2]}</span>
                     </div>
                     <div className="blue-line"></div>
+                </div>
+                <br />
+                <br />
+                <div className="form-register">
+                    <TextField label="Enter Full Name" ></TextField>
+                    <TextField  label="Enter E-mail"></TextField>
+                    <TextField type='tel' label="Enter PhoneNumber"></TextField>
                 </div>
                 
 
