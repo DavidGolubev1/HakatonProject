@@ -4,7 +4,7 @@ import Logo from './../assets/Logo.png'
 import './../Style/layout.css'
 function Layout() {
     const [burgerBool, setBurgerBool] = useState(false)
-    const loggedUser = JSON.parse(localStorage.getItem("logged-user"))
+    const loggedUser = localStorage.getItem("logged-user")? JSON.parse(localStorage.getItem("logged-user")):{}
     return (
         <div className='layout-container'>
             <div className="nav-include-all">
@@ -15,10 +15,10 @@ function Layout() {
                         <Link className='nav-links' to={'Voulnteerings'}> <div>Activities</div></Link>
                         <Link className='nav-links' to={'About'}>About us </Link>
                         <Link className='nav-links' to={'Contact'}>Contact us</Link>
-                        {loggedUser === "" ?
-                            <Link className='nav-links' to={'userpage/Login'}>Log In </Link>
+                        {localStorage.getItem("logged-user")!=""?
+                        <Link className='nav-links' to={'VolunteeringForm'}>Add event</Link>
                             :
-                            <Link className='nav-links' to={'VolunteeringForm'}>Add event</Link>
+                            <Link className='nav-links' to={'userpage/Login'}>Log In </Link>
                         }
                         <div id='place-holder'>sign in</div>
                         <div id='layout-profile-signed'>

@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#profile-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#profile-information-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    width: 90vw;
+    height: 30vw;
+    margin-top: 4vw;
+    border: 10px double black;
+    font-size: 1.5vw;
+}
+
+#profile-grid-name{
+    margin-left: 1vw;
+    grid-row-start: 1 ;
+    grid-row-end: 2 ;
+    grid-column-start: 1 ;
+    grid-column-end: 2 ;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    background-color: aquamarine;
+}
+#profile-grid-password{
+    margin-left: 1vw;
+    grid-row-start: 1 ;
+    grid-row-end: 2 ;
+    grid-column-start: 2 ;
+    grid-column-end: 3 ;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    background-color: red;
+}
+#profile-grid-Email{
+    margin-left: 1vw;
+    grid-row-start: 2 ;
+    grid-row-end: 3 ;
+    grid-column-start: 1 ;
+    grid-column-end: 2 ;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    background-color: green;
+}
+#profile-grid-phone{
+    margin-left: 1vw;
+    grid-row-start: 3 ;
+    grid-row-end: 4 ;
+    grid-column-start: 1 ;
+    grid-column-end: 2 ;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    background-color: purple;
+}
+#profile-grid-intrest{
+    margin-left: 1vw;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start:1 ;
+    grid-column-end:2 ;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    background-color: pink;
+}
+#profile-grid-img{
+    margin-left: 1vw;
+    grid-row-start: 1 ;
+    grid-row-end: 5 ;
+    grid-column-start: 3 ;
+    grid-column-end: 4 ;
+    background-color: grey;
+    padding: 5vw;
+}
+#logged-avatar-picture{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.271);
+}
+#profile-grid-BTN{
+    margin-left: 1vw;
+    grid-row-start: 4 ;
+    grid-row-end: 5 ;
+    grid-column-start: 2 ;
+    grid-column-end: 3 ;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
