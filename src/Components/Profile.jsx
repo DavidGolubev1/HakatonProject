@@ -1,4 +1,4 @@
-import "./Profile.css"
+import "./../Style/hy7777  7Profile.css"
 
 function Profile(){
     return(
