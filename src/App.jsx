@@ -7,11 +7,21 @@ import Volunteering from './Components/Voulnteering'
 import Layout from './Components/Layout'
 import VolunteeringPage from './Components/VolunteeringPage'
 import Userpage from './Components/Userpage'
+import Notfound from './Components/Notfound'
 import VolunteeringForm from './Components/VolunteeringForm'
 import Data from './data.json'
+import Users from "./Users.json"
+import * as React from "react"
+
 function App() {
   if (!localStorage.getItem('helps')) {
     localStorage.setItem("helps", JSON.stringify(Data.volunteers)); 
+  }
+  if (!localStorage.getItem("users")){
+    localStorage.setItem("users" , JSON.stringify(Users.users))
+  }
+  if (!localStorage.getItem("logged-user")){
+    localStorage.setItem("logged-user" , "")
   }
 
   return (
@@ -27,8 +37,8 @@ function App() {
         <Route path="register" element={<Register />}></Route>
         <Route path='Login' element={<Login />}></Route>
       </Route>
+      <Route path='*' element={<Notfound/>}></Route>
     </Routes>
   )
 }
-
-export default App
+export default App;
