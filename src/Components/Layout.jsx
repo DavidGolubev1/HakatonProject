@@ -31,6 +31,7 @@ function Layout() {
                 </div>}
             </div>
             <Outlet />
+            
             <div className="footer">
                 <div className="website-name-footer">
                     Help Hub
