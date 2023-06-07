@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import './../Style/volunteering-card.css'
+import { useState } from 'react';
 
 function VolunteeringCard(data) {
+    const [userName, setUserName] = useState('')
+    const [userEmail, setUserEmail] = useState('')
+    const [userPhone, setUserPhone] = useState('')
     return (
         <div id="volunteer-card">
             <Link className='box-link-card' to={`VoulnterringPage/${data.data.ID}`}>
