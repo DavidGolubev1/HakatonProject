@@ -3,14 +3,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+#home-page{
+    background-color:  rgba(110, 126, 159, 0.281);
+}
 
 .hot-helps{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.hero-text{
+    margin-top: 11vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: rgb(133, 191, 227) 1px 0 10px;
+}
 
 .hero-section-home-page{
-    height: 30vw;
-    background-color: aqua;
+    height: 38vw;
+    background-image: url('https://www.ynet.co.il/PicServer5/2020/04/11/9902972/990296601000100980650no.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+.title-map{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: cursive;
 }
