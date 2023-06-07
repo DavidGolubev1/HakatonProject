@@ -1,0 +1,34 @@
+.box-info{
+    width: 320px;
+    height: 386px;
+    background-color: rgba(52, 91, 188, 0.511);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 0.5s;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 1vw;
+}
+.box-info:hover{
+    transform: scale(1.1);
+}
+.short-info-card{
+    width: 100%;
+    margin-left: 3vw;
+}
+.image-card{
+    width: 250px;
+    height: 200px;
+}
+.line-icon{
+    display: flex;
+}
+.info-icon{
+    margin-left: 1vw;
+}
+.subject-card{
+    font-size: 2rem;
+        
+}

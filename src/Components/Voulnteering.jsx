@@ -1,7 +1,7 @@
 function Volunteering (){
     return(
         <div>
-
+            Volunteering
         </div>
     )
 }

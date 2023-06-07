@@ -3,3 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.hot-helps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.hero-section-home-page{
+    height: 30vw;
+    background-color: aqua;
+}
