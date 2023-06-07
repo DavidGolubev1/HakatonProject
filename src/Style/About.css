@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+#about-page{
+    padding: 10vw;
+    font-size: 2vw;
+    background-color:  rgba(110, 126, 159, 0.281);
+}

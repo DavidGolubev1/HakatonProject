@@ -15,7 +15,7 @@ function Login(){
                 console.log(arrayFromLS.find(item=>item.userName===enteredName));
                 alert("Logged in successefully")
                 navigate("/")
-                localStorage.setItem("logged-user" , enteredName)
+                localStorage.setItem("logged-user" , JSON.stringify(specificAccount))
             }else {
                 alert("Username or password is wrong")
             }
