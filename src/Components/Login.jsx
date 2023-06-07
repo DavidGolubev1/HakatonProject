@@ -31,7 +31,7 @@ function Login(){
                 <input onChange={(event)=>setEnteredName(event.target.value)} placeholder="Enter user name" id="login-password-input" type="text" />
             </div>
             <div id="login-password">
-                <input onChange={(event)=>setEnteredPassword(event.target.value)} placeholder="Enter password" id="login-password-input" type="text" />
+                <input onChange={(event)=>setEnteredPassword(event.target.value)} placeholder="Enter password" id="login-password-input" type="password" />
             </div>
             <div id="login-button">
                 <button onClick={()=>checkAndLog()} id="login-button-submit">Submit</button>

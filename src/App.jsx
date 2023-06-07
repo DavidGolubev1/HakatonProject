@@ -1,8 +1,10 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Login from './Components/Login'
-import HomePage from './Components/HomePage'
+import HomePage from './Components/Homepage'
 import Register from './Components/Register'
+import About from './Components/About'
+import Contact from './Components/Contact'
 import Volunteering from './Components/Voulnteering'
 import Layout from './Components/Layout'
 import VolunteeringPage from './Components/VolunteeringPage'
@@ -28,16 +30,18 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<HomePage />}></Route>
+        <Route path='About' element={<About/>}></Route>
+        <Route path='Contact' element={<Contact/>}></Route>
         <Route path='Voulnteerings' element={<Volunteering />}></Route>
         <Route path='VoulnterringPage/:id' element={<VolunteeringPage />}></Route>
-        <Route path='AddVolunteering' element={<VolunteeringForm />}></Route>
+        <Route path='VolunteeringForm' element={<VolunteeringForm />}></Route>
         <Route path='Profile' element={''}></Route>
       </Route>
+      <Route path='*' element={<Notfound/>}></Route>
       <Route path='Userpage' element={<Userpage />}>
         <Route path="register" element={<Register />}></Route>
         <Route path='Login' element={<Login />}></Route>
       </Route>
-      <Route path='*' element={<Notfound/>}></Route>
     </Routes>
   )
 }
