@@ -30,6 +30,8 @@
 }
 .subject-card{
     font-size: 2rem;
-    font-family: 'Rubik', sans-serif;
-        
+    font-family: 'Rubik', sans-serif; 
+}
+.box-link-card{
+    text-decoration: none;
 }

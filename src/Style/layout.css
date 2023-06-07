@@ -6,6 +6,11 @@
   margin: 0;
   padding: 0;
 }
+.layout-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 #logo {
   height: 7vw;
@@ -85,7 +90,7 @@
 }
 
 .footer {
-  height: 60px;
+  height: 5vw;
   background-color: rgba(110, 126, 159, 0.281);
   color: white;
   font-family: 'Alkatra', cursive;
