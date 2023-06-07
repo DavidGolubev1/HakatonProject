@@ -5,6 +5,7 @@ function VolunteeringCard(data) {
         <div id="volunteer-card">
             <div className="box-info">
                 <div className='subject-card'>{data.data.subject}</div>
+                <div className="title-card">{data.data.title}</div>
                 <div className="image-card">
                     <img className='image-card' src={`${data.data.image}`} alt="" />
                 </div>
@@ -17,12 +18,12 @@ function VolunteeringCard(data) {
                     <br />
                     <div className="duration-card line-icon">
                         <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/property-time.png" alt="property-time" />
-                        <div className='info-icon'> {data.data.required[2]}</div>
+                        <div className='info-icon'> Range: {data.data.required[2]}</div>
                     </div>
                     <br />
                     <div className="time-card line-icon">
                     <img width="20" height="20" src="https://img.icons8.com/ios/50/clock--v3.png" alt="clock--v3"/>
-                        <div className='info-icon'> {data.data.time}</div>
+                        <div className='info-icon'> Time: {data.data.time}</div>
                     </div>
                 </div>
             </div>
