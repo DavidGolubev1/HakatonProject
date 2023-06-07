@@ -10,6 +10,7 @@ import Layout from './Components/Layout'
 import VolunteeringPage from './Components/VolunteeringPage'
 import Userpage from './Components/Userpage'
 import Notfound from './Components/Notfound'
+import Profile from './Components/Profile'
 import VolunteeringForm from './Components/VolunteeringForm'
 import Data from './data.json'
 import Users from "./Users.json"
@@ -34,9 +35,8 @@ function App() {
         <Route path='Contact' element={<Contact/>}></Route>
         <Route path='Voulnteerings' element={<Volunteering />}></Route>
         <Route path='VoulnterringPage/:id' element={<VolunteeringPage />}></Route>
-        <Route path='Voulnteerings/VoulnterringPage/:id' element={<VolunteeringPage />}></Route>
         <Route path='VolunteeringForm' element={<VolunteeringForm />}></Route>
-        <Route path='Profile' element={''}></Route>
+        <Route path='Profile' element={<Profile/>}></Route>
       </Route>
       <Route path='*' element={<Notfound/>}></Route>
       <Route path='Userpage' element={<Userpage />}>
