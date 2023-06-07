@@ -42,7 +42,7 @@ function Register() {
                 <input onChange={(event) => setRegistedName(event.target.value)} placeholder="Enter user name" id="register-password-input" type="text" />
             </div>
             <div id="register-password">
-                <input onChange={(event) => setRegistedPassword(event.target.value)} placeholder="Enter password" id="register-password-input" type="text" />
+                <input onChange={(event) => setRegistedPassword(event.target.value)} placeholder="Enter password" id="register-password-input" type="password" />
             </div>
             <div id="register-button">
                 <button onClick={()=>checkAndSign()} id="register-button-submit">Submit</button>
