@@ -17,8 +17,8 @@ function App() {
         <Route path='VoulnterringPage/:id' element={<VolunteeringPage />}></Route>
       </Route>
       <Route path='Userpage' element={<Userpage />}>
+        <Route path="register" element={<Register />}></Route>
         <Route path='Login' element={<Login />}></Route>
-        <Route path='Register' element={<Register />}></Route>
       </Route>
     </Routes>
   )
