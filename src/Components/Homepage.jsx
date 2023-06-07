@@ -1,8 +1,10 @@
-import "./Homepage.css"
+import "./../Style/Homepage.css"
 function Homepage(){
     return(
         <div id="home-page">
-
+            <div>
+                 HomePage
+            </div>
         </div>
     );
 };

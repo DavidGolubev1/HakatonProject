@@ -1,4 +1,4 @@
-import "./Register.css"
+import "./../Style/Register.css"
 
 function Register (){
     return(
