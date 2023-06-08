@@ -9,5 +9,14 @@
 #about-page{
     padding: 10vw;
     font-size: 2vw;
+    height: 100vh;
     background-color:  rgba(110, 126, 159, 0.281);
+}
+@media (max-width: 650px) {
+    #about-page{
+        padding: 10vw;
+        font-size: 4vw;
+        height: auto;
+        background-color:  rgba(110, 126, 159, 0.281);
+    }
 }

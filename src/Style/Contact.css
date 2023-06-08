@@ -8,6 +8,7 @@
     padding: 10vw;
     font-size: 2vw;
     background-color:  rgba(110, 126, 159, 0.281);
+    height: 100vh;
 }
 #title-contact{
     font-weight: bold;
@@ -42,4 +43,19 @@
   box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
   position:absolute;
   margin-top:35px;
+}
+
+@media (max-width: 450px){
+    #contact-page{
+        padding: 10vw;
+        font-size: 4vw;
+        background-color:  rgba(110, 126, 159, 0.281);
+    }
+}
+@media (max-width: 330px){
+    #contact-page{
+        padding: 10vw;
+        font-size: 6vw;
+        background-color:  rgba(110, 126, 159, 0.281);
+    }
 }
