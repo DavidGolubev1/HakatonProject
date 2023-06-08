@@ -78,6 +78,7 @@
 .form-register{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
 }
 .title-form{
@@ -85,3 +86,18 @@
     font-weight: bold;
     font-size: 2vw;
 }
+
+.save-button{
+    width: 5vw;
+    height: 3vw;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: snow;
+    transition: 0.5s all;
+}
+
+.save-button:hover{
+    background-color: snow;
+    color: dodgerblue;
+}
+
