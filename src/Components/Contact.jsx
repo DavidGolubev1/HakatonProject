@@ -1,3 +1,4 @@
+
 import { TextField } from "@mui/material";
 import "./../Style/Contact.css"
 
@@ -25,8 +26,10 @@ function Contact (){
                 <div>< button className = "submitbutton" type="submit"> submit</button></div>
                 </div>
             </div>
-            
+
         </div>
+        
+    </div>
     );
 };
 export default Contact;

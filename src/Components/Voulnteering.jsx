@@ -72,7 +72,7 @@ function Volunteering() {
                 <br />
                 <br />
                 <button className="search-button" onClick={handleFilter}>
-                    <span className="span-button">🔎</span>
+                    Filter
                 </button>
             </div>
             <br />
