@@ -35,6 +35,7 @@ function App() {
         <Route path='Contact' element={<Contact/>}></Route>
         <Route path='Voulnteerings' element={<Volunteering />}></Route>
         <Route path='VoulnterringPage/:id' element={<VolunteeringPage />}></Route>
+        <Route path='Voulnteerings/VoulnterringPage/:id' element={<VolunteeringPage />}></Route>
         <Route path='VolunteeringForm' element={<VolunteeringForm />}></Route>
         <Route path='Profile' element={<Profile/>}></Route>
       </Route>

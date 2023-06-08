@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./../style/Notfound.css"
 
 function Notfound() {
@@ -8,7 +9,7 @@ function Notfound() {
                         Sorry, we didn't find the site you were looking for, please try another option
                     </div>
                     <div >
-                        <button id="button">home page</button>
+                        <Link to={"/"}><button id="button">home page</button></Link>
                     </div>
             </div>
     );
