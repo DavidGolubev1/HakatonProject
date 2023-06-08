@@ -20,7 +20,7 @@ function Layout() {
                         <Link to={`/`} className="logo-background"><img id="logo" src={Logo} alt="" /></Link>
                         <div>
                             <label className="ui-switch">
-                                <input type="checkbox" onChange={()=> setModeBool(!ModeBool)} />
+                                <input type="checkbox" onChange={() => setModeBool(!ModeBool)} />
                                 <div className="slider">
                                     <div className="circle"></div>
                                 </div>
@@ -37,20 +37,20 @@ function Layout() {
                             <Link className='nav-links' to={'userpage/Login'}>Log In </Link>
                         }
                         <div id='place-holder'>sign in</div>
-                        {localStorage.getItem("logged-user")!=""?
-                        <div id='layout-profile-signed'>
-                            <div id='start-drop-down-meanu'>
-                                <img id='profile-signed-avatar' src={loggedUser.avatarImage} alt="" />
+                        {localStorage.getItem("logged-user") != "" ?
+                            <div id='layout-profile-signed'>
+                                <div id='start-drop-down-meanu'>
+                                    <img id='profile-signed-avatar' src={loggedUser.avatarImage} alt="" />
+                                </div>
+                                <div id='profile-signed-drop-down'>
+                                    <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My profile</div></Link>
+                                    <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>Future activities</div></Link>
+                                    <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My activities</div></Link>
+                                    <Link className='drop-down-links' ><div onClick={() => localStorage.removeItem("logged-user", "") + window.location.reload()} className='drop-down-profile'>Sign out</div></Link>
+                                </div>
                             </div>
-                            <div id='profile-signed-drop-down'>
-                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My profile</div></Link>
-                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>Future activities</div></Link>
-                                <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My activities</div></Link>
-                                <Link className='drop-down-links' ><div onClick={()=>localStorage.removeItem("logged-user" , "")+window.location.reload()} className='drop-down-profile'>Sign out</div></Link>
-                            </div>
-                        </div>
-                        :
-                        null}
+                            :
+                            null}
 
                         <label className="burger" htmlFor="burger">
                             <input type="checkbox" id="burger" onChange={() => setBurgerBool(!burgerBool)} />
@@ -62,6 +62,22 @@ function Layout() {
                 </div>
                 {burgerBool && <div className='oper-bar-box'>
                     <div className="open-bar">
+                        <Link className='nav-links-column' to={'/'}><div>Home page</div> </Link>
+                        <Link className='nav-links-column' to={'Voulnteerings'}> <div>Activities</div></Link>
+                        <Link className='nav-links-column' to={'About'}>About us </Link>
+                        <Link className='nav-links-column' to={'Contact'}>Contact us</Link>
+                        {localStorage.getItem("logged-user") != "" ?
+                            <div className='open-bar'>
+                                <Link className='nav-links-column' to={'VolunteeringForm'}>Add event</Link>
+                                <Link className='nav-links-column' to={"profile"}><div className='drop-down-profile'>My profile</div></Link>
+                                <Link className='nav-links-column' to={"profile"}><div className='drop-down-profile'>Future activities</div></Link>
+                                <Link className='nav-links-column' to={"profile"}><div className='drop-down-profile'>My activities</div></Link>
+                                <Link className='nav-links-column' ><div onClick={() => localStorage.removeItem("logged-user", "") + window.location.reload()} className='drop-down-profile'>Sign out</div></Link>
+                            </div>
+                            :
+                            <Link className='nav-links-column' to={'userpage/Login'}>Log In </Link>
+                        }
+
 
                     </div>
                 </div>}

@@ -43,7 +43,7 @@ function Volunteering() {
             <div className="hero-section-filters">
                 <div className='selects'>
                     <div>
-                        <label id="demo-multiple--label">Find Your Area:</label>
+                        <label className="demo-multiple--label">Find Your Area:</label>
                         <select className='select-style' onChange={(e) => setChosenArea(e.target.value)}>
                             <option value="1">All</option>
                             {
@@ -56,7 +56,7 @@ function Volunteering() {
                         </select>
                     </div>
                     <div>
-                        <label id="demo-multiple--label">Chose The Subject:</label>
+                        <label className="demo-multiple--label">Chose The Subject:</label>
                         <select className='select-style' onChange={(e) => setChosenSub(e.target.value)}>
                             <option value="1" >All</option>
                             {
