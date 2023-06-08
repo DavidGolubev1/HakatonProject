@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import { TextField, MenuItem, Radio, Select, InputLabel, FormLabel, FormControl, RadioGroup, FormControlLabel } from '@mui/material'
 import "./../style/VolunteerForm.css"
 
 function VolunteeringForm() {
+  const navigate = useNavigate()
   const [arrOfDetails, setArrOfDetails] = useState([])
   const helpsData = JSON.parse(localStorage.getItem('helps'))
   const loged = JSON.parse(localStorage.getItem('logged-user'))
@@ -32,6 +34,7 @@ function VolunteeringForm() {
     console.log(obj);
     helpsData.push(obj)
     localStorage.setItem("helps", JSON.stringify(helpsData));
+    navigate('/Voulnteerings')
   };
 
   return (

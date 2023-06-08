@@ -8,7 +8,7 @@ function VolunteeringCard(data) {
     const [userPhone, setUserPhone] = useState('')
     const helpsData = JSON.parse(localStorage.getItem('helps'))
     const dataById = helpsData.find(help => help.ID == data.data.ID);
-    const IndexById = helpsData.findIndex(help => data.data.ID == help.ID );
+    const IndexById = helpsData.findIndex(help => data.data.ID == help?.ID );
     
 
     function handleAddView(){

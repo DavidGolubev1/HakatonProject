@@ -35,7 +35,11 @@ function VolunteeringPage() {
                 email: addEmaiil,
                 phoneNumber: addPhone
             }
-
+            if(addName == loged.userName)
+            {
+                loged.futureActivities.push(dataById)
+                localStorage.setItem("logged-user", JSON.stringify(loged));
+            }
             dataById.arrOfVolunteers.push(register);
             helpsData[IndexById] = dataById;
             localStorage.setItem("helps", JSON.stringify(helpsData));
@@ -81,6 +85,8 @@ return (
                     <span>{dataById.required[1]}</span>
                     <span><img width="48" height="48" src="https://img.icons8.com/fluency/48/telescope.png" alt="telescope" /></span>
                     <span>{dataById.required[2]}</span>
+                    <span><img width="48" height="48" src="https://img.icons8.com/office/16/binoculars.png" alt="binoculars"/></span>
+                    <span>{dataById.view}</span>
                 </div>
                 <div className="blue-line"></div>
             </div>
@@ -88,7 +94,7 @@ return (
             <br />
             <div className='title-form'>To register fill the form</div>
             <form ref={form} onSubmit={sendEmail} className='form-register'>
-                <TextField label="Enter Full Name" name='FullName' onChange={(e) => setAddName(e.target.value)} ></TextField>
+                <TextField label="Enter User Name" name='FullName' onChange={(e) => setAddName(e.target.value)} ></TextField>
                 <TextField label="Enter E-mail" name='user_email' onChange={(e) => setAddEmail(e.target.value)} ></TextField>
                 <TextField type='tel' label="Enter Phone Number" name='phone' onChange={(e) => setAddPhone(e.target.value)} ></TextField>
                 <input style={{ display: 'none' }} type="text" name='title' value={dataById.title} />
@@ -97,7 +103,7 @@ return (
             <br />
             <br />
             { (dataById.managerUser == loged.userName)&& <div>list of volunteers</div>}
-           { (dataById.managerUser == loged.userName)&&  <a href={`mailto:${strEmail}`}>hii</a>}
+           { (dataById.managerUser == loged.userName && dataById.arrOfVolunteers.length>0) &&  <a href={`mailto:${strEmail}`}>Send email to all</a>}
             {
                (dataById.managerUser == loged.userName)&& dataById.arrOfVolunteers.map((user,index) =>{
                 return(
