@@ -85,3 +85,15 @@
     font-weight: bold;
     font-size: 2vw;
 }
+
+.user-card-box{
+    margin-left: 2vw;
+    width: 80%;
+    height: 6vw;
+    background-color: rgb(93, 93, 184);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1vw;
+}
