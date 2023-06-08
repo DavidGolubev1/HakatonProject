@@ -6,6 +6,7 @@ import { TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/mater
 function Profile() {
     let loggedUserProfile = JSON.parse(localStorage.getItem("logged-user"))
     let allActivities = JSON.parse(localStorage.getItem("helps"))
+    const myVolunteers = loggedUserProfile.futureActivities;
     // let myActivities=allActivities.filter(item=>item.arrOfVolunteers.findIndex(volunteer=>volunteer===loggedUserProfile.userName)!=-1)
     const [wantedPicture, setWantedPicture] = useState(loggedUserProfile.avatarImage)
     const [newName, setNewName] = useState(loggedUserProfile.userName)
@@ -16,17 +17,21 @@ function Profile() {
     const [wantToEdit, setWantToEdit] = useState(false)
     // const currentUsers=JSON.parse(localStorage.getItem("users"))
     const [myOwnAvtivities, setMyOwnAvtivities] = useState(allActivities)
-    const editedProfile = {
-        "userName": newName,
-        "password": newPassword,
-        "Email": newEmail,
-        "phone": newPhone,
-        "fieldOfIntrest": newIntrest,
-        "avatarImage": wantedPicture,
-        "futureActivities": [loggedUserProfile.futureActivities]
-    }
+
     function uptateInfo() {
         console.log("hello");
+        const editedProfile = {
+            "userName": newName,
+            "password": newPassword,
+            "Email": newEmail,
+            "phone": newPhone,
+            "fieldOfIntrest": newIntrest,
+            "avatarImage": wantedPicture,
+            "futureActivities": [loggedUserProfile.futureActivities]
+        }
+        console.log(editedProfile);
+        localStorage.setItem("logged-user", JSON.stringify(editedProfile));
+        window.location.reload()
     }
 
     useEffect(() => {
@@ -51,16 +56,16 @@ function Profile() {
             {wantToEdit === true ?
                 <div id="profile-information-edit">
                     <div className="profile-grid-name">
-                        <TextField required id="outlined-basic" label="Name" variant="outlined" />
+                        <TextField required id="outlined-basic" label="Name" variant="outlined" onChange={(e) => setNewName(e.target.value)} />
                     </div>
                     <div className="profile-grid-password">
-                        <TextField required id="outlined-basic" label="Password" variant="outlined" />
+                        <TextField required id="outlined-basic" label="Password" variant="outlined" onChange={(e) => setNewPassword(e.target.value)} />
                     </div>
                     <div className="profile-grid-Email">
-                        <TextField required id="outlined-basic" label="Email" variant="outlined" />
+                        <TextField required id="outlined-basic" label="Email" variant="outlined" onChange={(e) => setNewEmail(e.target.value)} />
                     </div>
                     <div className="profile-grid-phone">
-                        <TextField required id="outlined-basic" label="Phone" variant="outlined" />
+                        <TextField required id="outlined-basic" label="Phone" variant="outlined" onChange={(e) => setNewPhone(e.target.value)} />
                     </div>
                     <div className="profile-grid-intrest">
                         <FormControl id='form-choose-intrest'>
@@ -69,6 +74,7 @@ function Profile() {
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 label="Subject"
+                                onChange={(e) => setNewIntrest(e.target.value)}
                             >
                                 <MenuItem value={"Agriculture"}>Agriculture</MenuItem>
                                 <MenuItem value={"Environmental Quality"}>Environmental Quality</MenuItem>
@@ -86,13 +92,20 @@ function Profile() {
                             <button onClick={() => setWantedPicture("https://img.icons8.com/color/48/circled-user-male-skin-type-6--v1.png")}><div id="fifth-avatar"><img className="new-avatar-photo" src="https://img.icons8.com/color/48/circled-user-male-skin-type-6--v1.png" alt="circled-user-male-skin-type-6--v1" /></div></button>
                         </div>
                     </div>
-                    <div className="profile-grid-BTN"><button onClick={() => uptateInfo}>Save changes</button></div>
+                    <div className="profile-grid-BTN"><button onClick={uptateInfo}>Save changes</button></div>
                 </div>
                 :
                 null
             }
             <h1 className="profile-header">My future activities-</h1>
             <div id="profile-future-activities">
+                {/* {myVolunteers?.length > 0 &&
+                    myVolunteers.map((data, index) => {
+                        return (
+                            <VolunteeringCard key={index} data={data} />
+                        )
+                    })
+                } */}
 
             </div>
             <h1 className="profile-header">Self made activities-</h1>

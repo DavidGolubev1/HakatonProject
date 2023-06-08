@@ -23,7 +23,7 @@ function Register() {
                     localUsers.push(newUser)
                     localStorage.setItem("users", JSON.stringify(localUsers))
                     alert("Signed up successefully")
-                    navigate("/Login")
+                    navigate("/Userpage/Login")
                 } else {
                     alert("Password is too short, make it atleast 5 chars")
                 }

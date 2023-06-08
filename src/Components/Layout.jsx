@@ -1,8 +1,9 @@
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Logo from './../assets/Logo.png'
 import './../Style/layout.css'
 function Layout() {
+    const navigate = useNavigate()
     const [burgerBool, setBurgerBool] = useState(false)
     const [ModeBool, setModeBool] = useState(false)
     if (!ModeBool) {
@@ -10,6 +11,15 @@ function Layout() {
     }
     else {
         localStorage.setItem('mode', 'dark')
+    }
+    function handleLogOut(){
+        const getArrayFromLS = JSON.parse(localStorage.getItem("users"))
+        const loged = JSON.parse(localStorage.getItem("logged-user"))
+        const index = getArrayFromLS.findIndex((value) => value.userName == loged.userName)
+        getArrayFromLS[index] = loged
+        localStorage.setItem("users", JSON.stringify(getArrayFromLS))
+        localStorage.removeItem('logged-user')
+        
     }
     const loggedUser = localStorage.getItem("logged-user") ? JSON.parse(localStorage.getItem("logged-user")) : {}
     return (
@@ -46,7 +56,7 @@ function Layout() {
                                 <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My profile</div></Link>
                                 <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>Future activities</div></Link>
                                 <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My activities</div></Link>
-                                <Link className='drop-down-links' ><div onClick={()=>localStorage.removeItem("logged-user" , "")+window.location.reload()} className='drop-down-profile'>Sign out</div></Link>
+                                <Link className='drop-down-links' to={''} ><div onClick={handleLogOut} className='drop-down-profile'>Sign out</div></Link>
                             </div>
                         </div>
                         :
