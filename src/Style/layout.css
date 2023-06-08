@@ -138,6 +138,8 @@
   background: rgb(67, 100, 122);
   background: linear-gradient(14deg, rgba(67, 100, 122, 1) 0%, rgba(19, 75, 112, 1) 51%, rgba(4, 74, 121, 1) 100%, rgba(0, 100, 251, 1) 100%);
   height: 35vh;
+  border-radius: 10px;
+  overflow: hidden;
   display: none;
 }
 

@@ -139,7 +139,7 @@ function VolunteeringForm() {
         </div>
         <div id='grid-BTN'>
           <button type='submit' onClick={handleSubmit}>Submit</button>
-          <input type="submit" />
+          {/* <input type="submit" /> */}
         </div>
       </form>
     </div>
