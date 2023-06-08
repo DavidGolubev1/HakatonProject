@@ -8,7 +8,7 @@ function Homepage() {
     console.log(sortedData);
     const topThreeVolunteerings = sortedData.slice(0, 3);
     return (
-        <div id="home-page">
+        <div className="home-page" id={`${localStorage.getItem('mode')}`}>
             <div>
                 <div className="hero-section-home-page">
                     <div className="hero-text">

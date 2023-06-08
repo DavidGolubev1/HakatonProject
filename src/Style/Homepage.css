@@ -3,8 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-#home-page{
+.home-page{
     background-color:  rgba(110, 126, 159, 0.281);
+}
+#light{
+    background-color: rgba(110, 126, 159, 0.281);
+}
+#dark{
+    background-color: rgb(41, 13, 68);
 }
 
 .hot-helps{

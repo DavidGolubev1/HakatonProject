@@ -4,19 +4,35 @@ import Logo from './../assets/Logo.png'
 import './../Style/layout.css'
 function Layout() {
     const [burgerBool, setBurgerBool] = useState(false)
-    const loggedUser = localStorage.getItem("logged-user")? JSON.parse(localStorage.getItem("logged-user")):{}
+    const [ModeBool, setModeBool] = useState(false)
+    if (!ModeBool) {
+        localStorage.setItem('mode', 'light')
+    }
+    else {
+        localStorage.setItem('mode', 'dark')
+    }
+    const loggedUser = localStorage.getItem("logged-user") ? JSON.parse(localStorage.getItem("logged-user")) : {}
     return (
-        <div className='layout-container'>
+        <div className='layout-container' id={localStorage.getItem('mode')}>
             <div className="nav-include-all">
                 <div className="navbar">
                     <div className="links-bar">
                         <Link to={`/`} className="logo-background"><img id="logo" src={Logo} alt="" /></Link>
+                        <div>
+                            <label className="ui-switch">
+                                <input type="checkbox" onChange={()=> setModeBool(!ModeBool)} />
+                                <div className="slider">
+                                    <div className="circle"></div>
+                                </div>
+                            </label>
+
+                        </div>
                         <Link className='nav-links' to={'/'}><div>Home page</div> </Link>
                         <Link className='nav-links' to={'Voulnteerings'}> <div>Activities</div></Link>
                         <Link className='nav-links' to={'About'}>About us </Link>
                         <Link className='nav-links' to={'Contact'}>Contact us</Link>
-                        {localStorage.getItem("logged-user")!=""?
-                        <Link className='nav-links' to={'VolunteeringForm'}>Add event</Link>
+                        {localStorage.getItem("logged-user") != "" ?
+                            <Link className='nav-links' to={'VolunteeringForm'}>Add event</Link>
                             :
                             <Link className='nav-links' to={'userpage/Login'}>Log In </Link>
                         }
