@@ -46,7 +46,7 @@ function Layout() {
                                 <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My profile</div></Link>
                                 <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>Future activities</div></Link>
                                 <Link className='drop-down-links' to={"profile"}><div className='drop-down-profile'>My activities</div></Link>
-                                <Link className='drop-down-links' ><div onClick={()=>localStorage.setItem("logged-user" , JSON.stringify({}))} className='drop-down-profile'>Sign out</div></Link>
+                                <Link className='drop-down-links' ><div onClick={()=>localStorage.removeItem("logged-user" , "")+window.location.reload()} className='drop-down-profile'>Sign out</div></Link>
                             </div>
                         </div>
                         :
