@@ -9,8 +9,13 @@ function VolunteeringPage() {
     const [addPhone, setAddPhone] = useState()
     const [addName, setAddName] = useState()
     const helpsData = JSON.parse(localStorage.getItem('helps'))
+    const loged = JSON.parse(localStorage.getItem('logged-user'))
     const dataById = helpsData.find(help => help.ID == id);
     const IndexById = helpsData.findIndex(help => help.ID == id);
+    const emailArr = dataById.arrOfVolunteers.map((value) => value.email);
+    console.log(emailArr);
+    const strEmail = emailArr.join(',')
+    console.log(strEmail);
 
     const form = useRef();
 
@@ -34,6 +39,7 @@ function VolunteeringPage() {
             dataById.arrOfVolunteers.push(register);
             helpsData[IndexById] = dataById;
             localStorage.setItem("helps", JSON.stringify(helpsData));
+            window.location.reload()
 
     }
 
@@ -88,6 +94,22 @@ return (
                 <input style={{ display: 'none' }} type="text" name='title' value={dataById.title} />
                 <input className='save-button' type="submit" value="Send" />
             </form>
+            <br />
+            <br />
+            { (dataById.managerUser == loged.userName)&& <div>list of volunteers</div>}
+           { (dataById.managerUser == loged.userName)&&  <a href={`mailto:${strEmail}`}>hii</a>}
+            {
+               (dataById.managerUser == loged.userName)&& dataById.arrOfVolunteers.map((user,index) =>{
+                return(
+                    
+                    <div className='user-card-box'>
+                        <div className="full-name-user">name: {user.fullName}</div>
+                        <div className='email-user'>email: {user.email}</div>
+                        <div className="phone-user">phone:{user.phoneNumber}</div>
+                    </div>
+                )
+               })
+            }
 
 
 
